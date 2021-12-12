@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Model",
-    "\\Pages",
-    "\\Shared",
+    "\\Controller",
     "\\wwwroot",
     "\\wwwroot\\css",
     "\\wwwroot\\images",
     "\\wwwroot\\images\\gminaWierzbno",
     "\\wwwroot\\images\\polityk",
+    "\\wwwroot\\images\\portfolio",
+    "\\wwwroot\\images\\projects",
     "\\wwwroot\\pdf"
   ],
-  "SelectedNode": "\\Data\\WeatherForecastService.cs",
+  "SelectedNode": "\\SavedList.txt",
   "PreviewInSolutionExplorer": false
 }

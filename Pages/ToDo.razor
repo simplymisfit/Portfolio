@@ -1,12 +1,12 @@
 @page "/todo"
 
-<h2>To Do (@todos.Count(todo => !todo.IsDone))</h2>
+<h2 class="center">To Do (@todos.Count(todo => !todo.IsDone))</h2>
 
 <ul>
     @foreach (var todo in todos)
     {
         <li>
-            <input class="form-control" type="checkbox" @bind="todo.IsDone" />
+            <input type="checkbox" @bind="todo.IsDone" />
             <input @bind="@todo.Title" />
         </li>
     }
@@ -23,6 +23,7 @@
 @code 
 {
     private List<TodoItem> todos = new();
+    //private List<TodoItem> todos = File.ReadAllLines("SavedList.txt").ToList();
     private string newTodo;
 
     private void AddTodo()
@@ -30,6 +31,16 @@
         if(!string.IsNullOrWhiteSpace(newTodo))
         {
             todos.Add(new TodoItem { Title = newTodo } );
+
+            TextWriter tw = new StreamWriter("SavedList.txt");
+    
+            int flag = 0;
+
+            foreach (var todo in todos)
+               tw.WriteLine(todo.Title);
+
+            tw.Close();
+
             newTodo = string.Empty;
         } 
     }

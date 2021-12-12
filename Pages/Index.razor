@@ -5,4 +5,38 @@
 <h1>Filip Rosochacki</h1>
 
 <h2>Portfolio</h2>
+<div class="center-screen">
 
+@if (quotes != null)
+    {
+        Random random = new Random();
+        int quoteNumber = random.Next(quotes.Count());
+        @foreach (var quote in quotes)
+        {
+            
+            @if (quote.Number == quoteNumber)
+            {
+                <blockquote class="blockquote text-center">
+                    <h2 class="mb-0">@quote.Quote</h2><br />
+                    <footer class="blockquote-footer">@quote.Author</footer>
+                </blockquote>
+            }
+        }
+    }
+
+</div>
+
+@code {
+    List<Quotes> quotes = new();
+
+    protected override void OnInitialized()
+    {
+        quotes.AddRange(new List<Quotes>
+        {
+            new Quotes { Author = "Nelson Mandela", Quote = "It always seems impossible until it's done.", Number = 0},
+            new Quotes { Author = "Terry Pratchett", Quote = "Wisdom comes from experience. Experience is often a result of lack of wisdom.", Number = 1},
+            new Quotes { Author = "Silco", Quote = "Power, real power, doesn’t come to those who were born strongest, or fastest, or smartest. No. It comes to those who will do anything to achieve it.", Number = 2},
+            new Quotes { Author = "Terry Pratchett, I Shall Wear Midnight", Quote = "Evil begins when you begin to treat people as things.", Number = 3}
+        });
+    }
+}
