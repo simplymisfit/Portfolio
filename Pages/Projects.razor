@@ -1,0 +1,49 @@
+﻿@page "/projects"
+
+<PageTitle>Projects</PageTitle>
+
+<div class="center">
+
+<h1>Filip Rosochacki</h1>
+
+</div>
+@code {
+    List<Project> projects = new();
+
+    protected override void OnInitialized()
+    {
+        projects.AddRange(new List<Project>
+    {
+        new Project { Name = "Defer", Description = "Defer is a card game made in Unity 3D", ImageUrl = "images/projects/defer.png"},
+        new Project { Name = "Elevator", Description = "Simple elevator simulation made in Java Swing", ImageUrl = "images/gminaWierzbno/gminaWierzbno.png"},
+        new Project { Name = "Car forum", Description = "Made in Java with Springboot, thymeleaf, bootstrap", ImageUrl = "images/gminaWierzbno.png"},
+        new Project { Name = "TCP multichat", Description = "Java TCP multichat with telnet", ImageUrl = "images/gminaWierzbno/gminaWierzbno.png"},
+        new Project { Name = "Phone forum", Description = "Phone forum made in php, js, jquery", ImageUrl = "images/gminaWierzbno/gminaWierzbno.png"},
+        new Project { Name = "Car rental", Description = "Car rental webpage made in node, react and mysql", ImageUrl = "images/gminaWierzbno/gminaWierzbno.png"},
+        new Project { Name = "Guess number", Description = "Simple number guessing game in Java with JavaFX", ImageUrl = "images/gminaWierzbno/gminaWierzbno.png"}
+    });
+    }
+}
+
+
+
+<div class="main">
+  <div class="center">
+  <h1>Projects</h1>
+  </div>
+  <br />
+  <ul class="project-cards">
+    @if (projects != null)
+    {
+      @foreach (var project in projects)
+      {
+        <li style="background-image: url('@project.ImageUrl')">
+          <div class="project-info">
+          <span class="title">@project.Name</span>
+          @project.Description
+          </div>
+        </li>
+      }
+    }
+  </ul>
+</div>
