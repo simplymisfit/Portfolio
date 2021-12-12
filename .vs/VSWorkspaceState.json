@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Controller",
-    "\\wwwroot",
-    "\\wwwroot\\css",
+    "\\Model",
+    "\\Pages",
     "\\wwwroot\\images",
     "\\wwwroot\\images\\gminaWierzbno",
     "\\wwwroot\\images\\polityk",
@@ -11,6 +11,6 @@
     "\\wwwroot\\images\\projects",
     "\\wwwroot\\pdf"
   ],
-  "SelectedNode": "\\SavedList.txt",
+  "SelectedNode": "\\SeedData.cs",
   "PreviewInSolutionExplorer": false
 }
